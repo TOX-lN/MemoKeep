@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
+
+import { Poppins } from "next/font/google"
+
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600"]
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,19 +47,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          
-        <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-        storageKey="MemoKeep-theme"
-        >
-        {children}
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={font.className}>
+        <ConvexClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="MemoKeep-theme"
+          >
+            {children}
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
