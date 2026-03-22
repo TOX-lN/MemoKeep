@@ -29,8 +29,8 @@ export const Navbar = () => {
                         </Button>
                     </SignInButton>
                      <SignInButton mode="modal">
-                        <Button variant="ghost" size="sm">
-                            Log in 
+                        <Button size="sm">
+                            Get MemoKeep
                         </Button>
                     </SignInButton>
                 </>
