@@ -4,7 +4,7 @@ import { useConvexAuth } from "convex/react";
 import { Spinner } from "@/components/spinner";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import  Navigation from "./_components/navigation"
+import { Navigation } from "./_components/navigation"
 
 const MainLayout = ({
     children

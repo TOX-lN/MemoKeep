@@ -2,9 +2,9 @@
 
 export const Navigation  = () => {
     return (  
-        <div>
+        <aside>
             Navigation!
-        </div>
+        </aside>
      );
 }
  
